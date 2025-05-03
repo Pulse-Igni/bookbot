@@ -25,6 +25,6 @@ def report (book,locale):
       sorted_chars = sorted(char_unsorted, key=char_unsorted.get, reverse=True) 
       for keys in sorted_chars:
             if keys.isalpha():
-                  print (keys, char_unsorted[keys])
+                  print (f"{keys}: {char_unsorted[keys]}")
       print("=============== END ==============")
       

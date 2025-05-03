@@ -1,6 +1,7 @@
 # Import
 from stats import word_counter 
 from stats import char_counter
+from stats import report
 
 
 # Retrieve book from:
@@ -11,8 +12,9 @@ def get_book_text(address):
 
 
 def main(book):   
-    word_counter(get_book_text(book))
-    char_counter(get_book_text(book))
+    book_locale = frankenstein
+    report(get_book_text(book),book_locale)
+    
 
 
 # Book to read from:

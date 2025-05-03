@@ -2,7 +2,7 @@
 def word_counter(book):
         splitnum = book.split()
         count = len(splitnum)
-        print (f"{count} words found in the document")
+        return count
 
 def char_counter(book):
     char_count = {}
@@ -12,12 +12,19 @@ def char_counter(book):
                 char_count[char] += 1
           else:
                 char_count[char]=1
-    print (char_count)
+    return (char_count)
 
 
-
-
-#testing block
-#testing = "String, and returns the number of times each character, (including symbols and spaces),"
-
-#char_counter(testing)
+def report (book,locale):
+      print ("============ BOOKBOT ============")
+      print (f"Analyzing book found at {locale}")
+      print ("----------- Word Count ----------")
+      print (f"Found {word_counter(book)} total words")
+      print ("-------- Character Count --------")
+      char_unsorted = char_counter(book)
+      sorted_chars = sorted(char_unsorted, key=char_unsorted.get, reverse=True) 
+      for keys in sorted_chars:
+            if keys.isalpha():
+                  print (keys, char_unsorted[keys])
+      print("=============== END ==============")
+      

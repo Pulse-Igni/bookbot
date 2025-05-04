@@ -2,6 +2,7 @@
 from stats import word_counter 
 from stats import char_counter
 from stats import report
+import sys
 
 
 # Retrieve book from:
@@ -12,13 +13,16 @@ def get_book_text(address):
 
 
 def main(book):   
-    book_locale = frankenstein
+    book_locale = book
     report(get_book_text(book),book_locale)
     
 
 
-# Book to read from:
-frankenstein = "books/frankenstein.txt"
-book = frankenstein
+#sys arg
+if len(sys.argv) != 2:
+    print ("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+book = sys.argv[1]
 
 main(book)
